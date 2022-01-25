@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<h>, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/twetbox.css">
+
+    <title>Document</title>
+</head>
+    <%- include('./partials/navbar.ejs') %>
+    <div class="container">
+        <br>
+        <% for (const twet of twets) { %> 
+            <div class="container twet-container">
+                <div class="col-md-12 col-lg-12">
+                    <article class="post vt-post">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                                <div class="post-type post-img">
+                                    <a href="#"><img src=<%= twet.picture%> class="img-responsive" alt="image post"></a>
+                                </div>
+                                <div class="author-info author-info-2">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <div class="info">
+                                                <p><strong>Time Posted:</strong> <%= twet.datePosted%></p>
+                                                <p> <strong>Posted From:</strong> <%=twet.location%> </p>
+                                               </div>
+                                        </li>
+                                        <li>
+                                            <div class="info">
+                                                <p>Author: <%= twet.author %></p>
+                                                
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+                                <div class="caption">
+                                    <h3 class="md-heading"><a href="/twet/<%=twet.id%>"><%= twet.title%></a></h3>
+                                    <p><%= twet.body %></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+
+            <h1></h1>
+            
+            <p></p>
+            <br>
+        <% } %> 
+    </div>
+    <%- include('./partials/footer.ejs') %>

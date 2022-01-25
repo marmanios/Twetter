@@ -1,0 +1,9 @@
+#SEEDS README
+
+The seeds folder hosts tools to clean and populate the database for testing of the app.
+To seed follow the below instructions: 
+
+1. Open up your cmd terminal and type "mongod"
+2. Open a seperate terminal, cd to the seeds folder and type "node index.js"
+3. When the message "seeded" appears, you may close the program using control+cd
+

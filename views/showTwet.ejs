@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<h>, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+    <%- include('./partials/navbar.ejs') %>
+
+
+    <div class="col-6 offset-3">
+        <h1 class="text-center">Edit Twet!</h1>
+        <form method="post" action="/twet/<%=foundTwet.id%>?_method=PATCH">
+            <div class="mb-3">
+                <label class="form-label" for="title" >Title</label>
+                <textarea class="form-control" name = "title" id = "title" type="text"  required><%=foundTwet.title%></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="picture" >picture url</label>
+                <textarea class="form-control" name = "picture" id = "picture" type="text"  required><%=foundTwet.picture%></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="body" >Body</label>
+                <textarea class="form-control" name = "body" id = "body" type="text"  required><%=foundTwet.body%></textarea>
+            </div>
+            
+            <button class="btn btn-success" type="submit">Update Twet!</button>
+            <button class="btn btn-danger" type="submit" value="Go Elsewhere" formaction="/twet/<%=foundTwet.id%>?_method=DELETE">Delete Twet!</button>
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
